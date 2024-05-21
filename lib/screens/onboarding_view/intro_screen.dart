@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:scisphere/screens/auth_view/login_screen.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({super.key});
@@ -68,9 +70,9 @@ class IntroScreen extends StatelessWidget {
           ),
         ],
         onDone: () {},
-        onSkip: () {},
+        // onSkip: () => Get.to(() => const LoginScreen()),
         showSkipButton: false,
-        overrideSkip: TextButton(onPressed: () {}, child: Text('Skip')),
+        overrideSkip: TextButton(onPressed: () {}, child: const Text('Skip')),
         dotsDecorator: const DotsDecorator(
             size: Size.square(10),
             activeSize: Size(20, 10),
@@ -79,23 +81,23 @@ class IntroScreen extends StatelessWidget {
             spacing: EdgeInsets.symmetric(horizontal: 3),
             activeShape: CircleBorder()),
         done: ElevatedButton(
-          onPressed: () {},
+          // onPressed: () {},
+          onPressed: () => Get.to(() => const LoginScreen()),
+
           style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xff66328E)),
           child: const Text('Get Started'),
         ),
         next: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xff66328E),
-              minimumSize: const Size(200, 44),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(6))),
-          child: Text(
-            'Next',
-            style: GoogleFonts.poppins().copyWith(color: Colors.white),
-          ),
-        ),
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xff66328E),
+                minimumSize: const Size(200, 44),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6))),
+            child: const SizedBox(
+              height: 0,
+            )),
         back: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(backgroundColor: Colors.white),

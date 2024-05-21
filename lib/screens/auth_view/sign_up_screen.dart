@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:scisphere/screens/auth_view/login_screen.dart';
+import 'package:scisphere/screens/home_view/home_page.dart';
 import 'package:scisphere/widgets/custom_textfield.dart';
-import 'package:scisphere/widgets/forgot_password_dialog_box.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 34, vertical: 100),
+        padding: const EdgeInsets.only(top: 26, left: 34, right: 34),
         child: SizedBox(
           width: double.infinity,
           child: Column(
@@ -24,21 +26,20 @@ class LoginScreen extends StatelessWidget {
                 height: 6,
               ),
               Text(
-                'Welcome Back',
+                'Create An Account',
                 style: GoogleFonts.poppins().copyWith(
                     color: const Color(0xff66328E),
                     fontSize: 18,
                     fontWeight: FontWeight.bold),
               ),
-              Text(
-                'Login to continue',
-                style: GoogleFonts.poppins().copyWith(
-                    color: const Color(0xff66328E),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
-              ),
               const SizedBox(
                 height: 20,
+              ),
+              const CustomTextfield(
+                title: 'Name',
+              ),
+              const SizedBox(
+                height: 30,
               ),
               const CustomTextfield(
                 title: 'Email Address',
@@ -65,29 +66,25 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      forgotPasswordDialogBox(context);
-                    },
-                    child: Text(
-                      'forgot password?',
-                      style: GoogleFonts.poppins().copyWith(
-                          color: const Color(0xff66328E),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  )
-                ],
+              const CustomTextfield(
+                title: 'Confirm Password',
+                isPrefixIcon: true,
+                isSuffixIcon: true,
+                suffixIcon: Icon(
+                  Icons.remove_red_eye_outlined,
+                  color: Colors.black,
+                ),
+                prefixIcon: Icon(
+                  Icons.lock,
+                  color: Color(0xff66328E),
+                ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 36, bottom: 16),
+                padding: const EdgeInsets.only(top: 32, bottom: 12),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () => Get.to(() => HomePage()),
                   child: Container(
                     width: double.infinity,
                     height: 60,
@@ -96,7 +93,7 @@ class LoginScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10)),
                     child: Center(
                       child: Text(
-                        'LOG IN',
+                        'SIGN UP',
                         style: GoogleFonts.poppins().copyWith(
                             fontSize: 18,
                             color: Colors.white,
@@ -106,28 +103,28 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 0,
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Dont have an account?',
+                    'Have an account already?',
                     style: GoogleFonts.poppins().copyWith(
                         color: Colors.black,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w400,
                         fontSize: 14),
                   ),
                   const SizedBox(
                     width: 4,
                   ),
-                  Text(
-                    'Sign up now',
-                    style: GoogleFonts.poppins().copyWith(
-                        color: const Color(0xff66328E),
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14),
+                  InkWell(
+                    onTap: () => Get.to(() => const LoginScreen()),
+                    child: Text(
+                      'Log in',
+                      style: GoogleFonts.poppins().copyWith(
+                          color: const Color(0xff66328E),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14),
+                    ),
                   )
                 ],
               )
