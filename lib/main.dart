@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:scisphere/screens/home_view/home_page.dart';
 import 'package:scisphere/screens/splash_view/splash_screen.dart';
 
 void main() {
@@ -13,11 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(
-        useMaterial3: false,
-      ),
+      theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }

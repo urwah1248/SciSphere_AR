@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CustomTextfield extends StatelessWidget {
   const CustomTextfield(
@@ -49,10 +48,7 @@ class CustomTextfield extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: GoogleFonts.poppins().copyWith(
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xff66328E),
-                      fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.w500, color: const Color(0xff66328E), fontSize: 16),
                 ),
                 const SizedBox(
                   height: 14,

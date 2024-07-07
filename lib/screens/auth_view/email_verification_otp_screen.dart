@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class EmailVerificationScreen extends StatelessWidget {
   EmailVerificationScreen({super.key});
@@ -33,40 +32,27 @@ class EmailVerificationScreen extends StatelessWidget {
               padding: const EdgeInsets.only(top: 8, bottom: 10),
               child: Text(
                 'Verify your email address',
-                style: GoogleFonts.poppins().copyWith(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
+                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
               ),
             ),
             RichText(
               textAlign: TextAlign.center,
-              text: TextSpan(
-                  style: GoogleFonts.poppins().copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16),
-                  children: [
-                    const TextSpan(
-                      text:
-                          'We sent you a 4 digit code to verify\nyour email address',
-                    ),
-                    TextSpan(
-                      text: '(desx@gmail.com).\n',
-                      style: GoogleFonts.poppins().copyWith(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16),
-                    ),
-                    const TextSpan(
-                      text: 'Enter in the field below.\n ',
-                    ),
-                  ]),
+              text: TextSpan(style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 16), children: [
+                const TextSpan(
+                  text: 'We sent you a 4 digit code to verify\nyour email address',
+                ),
+                TextSpan(
+                  text: '(desx@gmail.com).\n',
+                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
+                ),
+                const TextSpan(
+                  text: 'Enter in the field below.\n ',
+                ),
+              ]),
             ),
             Form(
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 60, vertical: 54),
+                padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 54),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -80,16 +66,10 @@ class EmailVerificationScreen extends StatelessWidget {
                             FocusScope.of(context).nextFocus();
                           }
                         },
-                        style: GoogleFonts.poppins().copyWith(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
-                        inputFormatters: [
-                          LengthLimitingTextInputFormatter(1),
-                          FilteringTextInputFormatter.digitsOnly
-                        ],
+                        inputFormatters: [LengthLimitingTextInputFormatter(1), FilteringTextInputFormatter.digitsOnly],
                       ),
                     ),
                     SizedBox(
@@ -102,16 +82,10 @@ class EmailVerificationScreen extends StatelessWidget {
                             FocusScope.of(context).nextFocus();
                           }
                         },
-                        style: GoogleFonts.poppins().copyWith(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
-                        inputFormatters: [
-                          LengthLimitingTextInputFormatter(1),
-                          FilteringTextInputFormatter.digitsOnly
-                        ],
+                        inputFormatters: [LengthLimitingTextInputFormatter(1), FilteringTextInputFormatter.digitsOnly],
                       ),
                     ),
                     SizedBox(
@@ -124,16 +98,10 @@ class EmailVerificationScreen extends StatelessWidget {
                             FocusScope.of(context).nextFocus();
                           }
                         },
-                        style: GoogleFonts.poppins().copyWith(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
-                        inputFormatters: [
-                          LengthLimitingTextInputFormatter(1),
-                          FilteringTextInputFormatter.digitsOnly
-                        ],
+                        inputFormatters: [LengthLimitingTextInputFormatter(1), FilteringTextInputFormatter.digitsOnly],
                       ),
                     ),
                     SizedBox(
@@ -146,16 +114,10 @@ class EmailVerificationScreen extends StatelessWidget {
                             FocusScope.of(context).nextFocus();
                           }
                         },
-                        style: GoogleFonts.poppins().copyWith(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
-                        inputFormatters: [
-                          LengthLimitingTextInputFormatter(1),
-                          FilteringTextInputFormatter.digitsOnly
-                        ],
+                        inputFormatters: [LengthLimitingTextInputFormatter(1), FilteringTextInputFormatter.digitsOnly],
                       ),
                     )
                   ],
@@ -167,7 +129,7 @@ class EmailVerificationScreen extends StatelessWidget {
               children: [
                 Text(
                   'Didn’t get the code?',
-                  style: GoogleFonts.poppins().copyWith(
+                  style: TextStyle(
                     color: Colors.black,
                   ),
                 ),
@@ -175,8 +137,7 @@ class EmailVerificationScreen extends StatelessWidget {
                   onTap: () {},
                   child: Text(
                     ' Resend',
-                    style: GoogleFonts.poppins().copyWith(
-                        color: Colors.black, fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                 )
               ],
@@ -186,23 +147,15 @@ class EmailVerificationScreen extends StatelessWidget {
             ),
             RichText(
               textAlign: TextAlign.center,
-              text: TextSpan(
-                  style: GoogleFonts.poppins().copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 14),
-                  children: [
-                    const TextSpan(
-                      text: 'Expires in',
-                    ),
-                    TextSpan(
-                      text: ' 01:00',
-                      style: GoogleFonts.poppins().copyWith(
-                          color: const Color(0xff66328E),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14),
-                    ),
-                  ]),
+              text: TextSpan(style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 14), children: [
+                const TextSpan(
+                  text: 'Expires in',
+                ),
+                TextSpan(
+                  text: ' 01:00',
+                  style: TextStyle(color: const Color(0xff66328E), fontWeight: FontWeight.bold, fontSize: 14),
+                ),
+              ]),
             ),
           ],
         ),
@@ -214,16 +167,11 @@ class EmailVerificationScreen extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: 60,
-            decoration: BoxDecoration(
-                color: const Color(0xff66328E),
-                borderRadius: BorderRadius.circular(10)),
+            decoration: BoxDecoration(color: const Color(0xff66328E), borderRadius: BorderRadius.circular(10)),
             child: Center(
               child: Text(
                 'Submit',
-                style: GoogleFonts.poppins().copyWith(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:scisphere/screens/auth_view/sign_up_screen.dart';
 import 'package:scisphere/screens/home_view/home_page.dart';
 import 'package:scisphere/widgets/custom_textfield.dart';
@@ -28,17 +28,11 @@ class LoginScreen extends StatelessWidget {
               ),
               Text(
                 'Welcome Back',
-                style: GoogleFonts.poppins().copyWith(
-                    color: const Color(0xff66328E),
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(color: const Color(0xff66328E), fontSize: 18, fontWeight: FontWeight.bold),
               ),
               Text(
                 'Login to continue',
-                style: GoogleFonts.poppins().copyWith(
-                    color: const Color(0xff66328E),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
+                style: TextStyle(color: const Color(0xff66328E), fontSize: 16, fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 height: 20,
@@ -79,10 +73,7 @@ class LoginScreen extends StatelessWidget {
                     },
                     child: Text(
                       'forgot password?',
-                      style: GoogleFonts.poppins().copyWith(
-                          color: const Color(0xff66328E),
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500),
+                      style: TextStyle(color: const Color(0xff66328E), fontSize: 14, fontWeight: FontWeight.w500),
                     ),
                   )
                 ],
@@ -94,16 +85,11 @@ class LoginScreen extends StatelessWidget {
                   child: Container(
                     width: double.infinity,
                     height: 60,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff66328E),
-                        borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(color: const Color(0xff66328E), borderRadius: BorderRadius.circular(10)),
                     child: Center(
                       child: Text(
                         'LOG IN',
-                        style: GoogleFonts.poppins().copyWith(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -117,10 +103,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Dont have an account?',
-                    style: GoogleFonts.poppins().copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14),
+                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 14),
                   ),
                   const SizedBox(
                     width: 4,
@@ -129,10 +112,7 @@ class LoginScreen extends StatelessWidget {
                     onTap: () => Get.to(() => const SignUpScreen()),
                     child: Text(
                       'Sign up now',
-                      style: GoogleFonts.poppins().copyWith(
-                          color: const Color(0xff66328E),
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14),
+                      style: TextStyle(color: const Color(0xff66328E), fontWeight: FontWeight.w400, fontSize: 14),
                     ),
                   )
                 ],

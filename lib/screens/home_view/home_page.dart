@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_unity_widget/flutter_unity_widget.dart';
 import 'package:get/route_manager.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:scisphere/screens/details_view/details_view.dart';
+import 'package:scisphere/screens/home_view/demo.dart';
 // import 'package:scisphere/widgets/custom_textfield.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
   // final List subjects = ['All', 'Physics', 'Chemistry', 'Biology'];
   static List contentsList = [
     "Stack",
@@ -15,6 +17,7 @@ class HomePage extends StatelessWidget {
     "Doubly Linked List",
     "Circular Doubly Linked List",
   ];
+  late UnityWidgetController _unityWidgetController;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -36,7 +39,7 @@ class HomePage extends StatelessWidget {
                     CircleAvatar(
                       backgroundImage: AssetImage('assets/sample_dp.png'),
                       radius: 24,
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(
@@ -44,20 +47,19 @@ class HomePage extends StatelessWidget {
                 ),
                 Text(
                   'Hello, Developer',
-                  style: GoogleFonts.poppins().copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24),
+                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24),
                 ),
+                ElevatedButton(
+                    onPressed: () {
+                      Get.to(() => DemoPage());
+                    },
+                    child: Text("Game")),
                 const SizedBox(
                   height: 4,
                 ),
                 Text(
                   'What do you want to learn?',
-                  style: GoogleFonts.poppins().copyWith(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 14),
+                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 14),
                 ),
                 const SizedBox(
                   height: 32,
@@ -79,10 +81,7 @@ class HomePage extends StatelessWidget {
                   children: [
                     Text(
                       'Contents',
-                      style: GoogleFonts.poppins().copyWith(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
                     ),
                     InkWell(
                       onTap: () {},
@@ -138,22 +137,17 @@ class HomePage extends StatelessWidget {
                                       color: const Color(0xffE6E6E6),
                                       borderRadius: BorderRadius.circular(12),
                                     ),
-                                    child: Image.asset(
-                                        'assets/web-programming.png'),
+                                    child: Image.asset('assets/web-programming.png'),
                                   ),
                                   const SizedBox(
                                     width: 20,
                                   ),
                                   Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         contentsList[index],
-                                        style: GoogleFonts.poppins().copyWith(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16),
+                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
                                       ),
                                       const Row(
                                         children: [
@@ -196,5 +190,9 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void onUnityCreated(controller) {
+    _unityWidgetController = controller;
   }
 }

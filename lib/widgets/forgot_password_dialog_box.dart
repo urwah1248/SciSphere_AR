@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:scisphere/widgets/custom_textfield.dart';
 import 'package:scisphere/widgets/successfully_password_reset_dialog_box.dart';
 
@@ -20,10 +20,7 @@ Future<dynamic> forgotPasswordDialogBox(BuildContext context) {
                   padding: const EdgeInsets.only(right: 8, top: 8),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                          onTap: () {}, child: const Icon(Icons.close))
-                    ],
+                    children: [GestureDetector(onTap: () {}, child: const Icon(Icons.close))],
                   ),
                 ),
                 Padding(
@@ -32,10 +29,7 @@ Future<dynamic> forgotPasswordDialogBox(BuildContext context) {
                     children: [
                       Text(
                         'Forgot Your Password?',
-                        style: GoogleFonts.poppins().copyWith(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20),
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
                       ),
                       const SizedBox(
                         height: 6,
@@ -43,10 +37,7 @@ Future<dynamic> forgotPasswordDialogBox(BuildContext context) {
                       Text(
                         textAlign: TextAlign.center,
                         'Enter Your Email Address and we will share a link to create a new passwrod.',
-                        style: GoogleFonts.poppins().copyWith(
-                            color: const Color(0xff66328E),
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500),
+                        style: TextStyle(color: const Color(0xff66328E), fontSize: 14, fontWeight: FontWeight.w500),
                       ),
                       const SizedBox(
                         height: 22,
@@ -64,9 +55,7 @@ Future<dynamic> forgotPasswordDialogBox(BuildContext context) {
                           child: Container(
                             width: double.infinity,
                             height: 60,
-                            decoration: BoxDecoration(
-                                color: const Color(0xff66328E),
-                                borderRadius: BorderRadius.circular(10)),
+                            decoration: BoxDecoration(color: const Color(0xff66328E), borderRadius: BorderRadius.circular(10)),
                             child: Center(
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -80,10 +69,7 @@ Future<dynamic> forgotPasswordDialogBox(BuildContext context) {
                                   ),
                                   Text(
                                     'Send',
-                                    style: GoogleFonts.poppins().copyWith(
-                                        fontSize: 18,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
+                                    style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),

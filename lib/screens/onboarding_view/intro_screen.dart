@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:scisphere/screens/auth_view/login_screen.dart';
 
@@ -17,13 +17,9 @@ class IntroScreen extends StatelessWidget {
           PageViewModel(
             titleWidget: Text(
               'Welcome to SciSphere',
-              style: GoogleFonts.poppins().copyWith(
-                  color: const Color(0xff66328E),
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
+              style: TextStyle(color: const Color(0xff66328E), fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            body:
-                'Welcome as you learn a world\nchanging skill to get a better job.',
+            body: 'Welcome as you learn a world\nchanging skill to get a better job.',
             image: const Image(
               image: AssetImage(
                 'assets/intro-first-image.png',
@@ -35,13 +31,9 @@ class IntroScreen extends StatelessWidget {
           PageViewModel(
             titleWidget: Text(
               'Choose Your Course',
-              style: GoogleFonts.poppins().copyWith(
-                  color: const Color(0xff66328E),
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
+              style: TextStyle(color: const Color(0xff66328E), fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            body:
-                'Choose the course of your choice\nand gain industry knowledge and\nexperience in it.',
+            body: 'Choose the course of your choice\nand gain industry knowledge and\nexperience in it.',
             image: const Image(
               image: AssetImage(
                 'assets/intro-second-image.png',
@@ -53,13 +45,9 @@ class IntroScreen extends StatelessWidget {
           PageViewModel(
             titleWidget: Text(
               'Get Acknowledged',
-              style: GoogleFonts.poppins().copyWith(
-                  color: const Color(0xff66328E),
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
+              style: TextStyle(color: const Color(0xff66328E), fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            body:
-                'Start learning and get educated\nafter your training to get a good\ngrade at practical exam',
+            body: 'Start learning and get educated\nafter your training to get a good\ngrade at practical exam',
             image: const Image(
               image: AssetImage(
                 'assets/intro-third-image.png',
@@ -84,17 +72,13 @@ class IntroScreen extends StatelessWidget {
           // onPressed: () {},
           onPressed: () => Get.to(() => const LoginScreen()),
 
-          style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xff66328E)),
+          style: ElevatedButton.styleFrom(backgroundColor: const Color(0xff66328E)),
           child: const Text('Get Started'),
         ),
         next: ElevatedButton(
             onPressed: () {},
             style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xff66328E),
-                minimumSize: const Size(200, 44),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(6))),
+                backgroundColor: const Color(0xff66328E), minimumSize: const Size(200, 44), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
             child: const SizedBox(
               height: 0,
             )),

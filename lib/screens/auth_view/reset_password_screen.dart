@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:scisphere/widgets/custom_textfield.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
@@ -20,10 +20,7 @@ class ResetPasswordScreen extends StatelessWidget {
             children: [
               Text(
                 'Reset Password',
-                style: GoogleFonts.poppins().copyWith(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18),
+                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
               ),
               const SizedBox(
                 height: 26,
@@ -48,16 +45,11 @@ class ResetPasswordScreen extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       height: 60,
-                      decoration: BoxDecoration(
-                          color: const Color(0xff66328E),
-                          borderRadius: BorderRadius.circular(6)),
+                      decoration: BoxDecoration(color: const Color(0xff66328E), borderRadius: BorderRadius.circular(6)),
                       child: Center(
                         child: Text(
                           'Submit',
-                          style: GoogleFonts.poppins().copyWith(
-                              fontSize: 18,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),

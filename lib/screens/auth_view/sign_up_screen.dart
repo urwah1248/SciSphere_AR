@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:scisphere/screens/auth_view/login_screen.dart';
 import 'package:scisphere/screens/home_view/home_page.dart';
 import 'package:scisphere/widgets/custom_textfield.dart';
@@ -27,10 +27,7 @@ class SignUpScreen extends StatelessWidget {
               ),
               Text(
                 'Create An Account',
-                style: GoogleFonts.poppins().copyWith(
-                    color: const Color(0xff66328E),
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(color: const Color(0xff66328E), fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 20,
@@ -88,16 +85,11 @@ class SignUpScreen extends StatelessWidget {
                   child: Container(
                     width: double.infinity,
                     height: 60,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff66328E),
-                        borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(color: const Color(0xff66328E), borderRadius: BorderRadius.circular(10)),
                     child: Center(
                       child: Text(
                         'SIGN UP',
-                        style: GoogleFonts.poppins().copyWith(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -108,10 +100,7 @@ class SignUpScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Have an account already?',
-                    style: GoogleFonts.poppins().copyWith(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14),
+                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 14),
                   ),
                   const SizedBox(
                     width: 4,
@@ -120,10 +109,7 @@ class SignUpScreen extends StatelessWidget {
                     onTap: () => Get.to(() => const LoginScreen()),
                     child: Text(
                       'Log in',
-                      style: GoogleFonts.poppins().copyWith(
-                          color: const Color(0xff66328E),
-                          fontWeight: FontWeight.w400,
-                          fontSize: 14),
+                      style: TextStyle(color: const Color(0xff66328E), fontWeight: FontWeight.w400, fontSize: 14),
                     ),
                   )
                 ],
