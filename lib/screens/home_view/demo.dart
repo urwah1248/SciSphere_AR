@@ -41,10 +41,7 @@ class DemoPage extends StatelessWidget {
             children: [
               UnityWidget(
                 onUnityCreated: onUnityCreated,
-                onUnitySceneLoaded: (sceneName) {
-                  changeCurrentLevel("2");
-                },
-                //  onUnityMessage: onUnityMessage,
+                onUnityMessage: onUnityMessage,
               ),
               Positioned(
                 bottom: 20,
@@ -71,6 +68,13 @@ class DemoPage extends StatelessWidget {
 
   void onUnityCreated(controller) {
     _unityWidgetController = controller;
+  }
+
+  void onUnityMessage(String msg) {
+    print("Received message from unity: ${msg.toString()}")
+    // Call back to home method if msg is "exit"
+    // Add Logic here
+    
   }
 
   changeCurrentLevel(String levelName) {
