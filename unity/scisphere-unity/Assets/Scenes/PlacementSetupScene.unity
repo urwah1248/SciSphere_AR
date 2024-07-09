@@ -7406,7 +7406,7 @@ PrefabInstance:
     - target: {fileID: 2497946419536956104, guid: 2a763540b8afb9c429c381638cf40d2e,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: pop
+      value: push
       objectReference: {fileID: 0}
     - target: {fileID: 2497946419536956104, guid: 2a763540b8afb9c429c381638cf40d2e,
         type: 3}
@@ -7516,7 +7516,7 @@ PrefabInstance:
     - target: {fileID: 7535445690668443084, guid: 2a763540b8afb9c429c381638cf40d2e,
         type: 3}
       propertyPath: m_Name
-      value: pop
+      value: Push
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14922,7 +14922,7 @@ PrefabInstance:
     - target: {fileID: 2497946419536956104, guid: 7a0945baad6622842ae63a29f6fdca5f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: push
+      value: pop
       objectReference: {fileID: 0}
     - target: {fileID: 2497946419536956104, guid: 7a0945baad6622842ae63a29f6fdca5f,
         type: 3}
@@ -15032,7 +15032,7 @@ PrefabInstance:
     - target: {fileID: 7535445690668443084, guid: 7a0945baad6622842ae63a29f6fdca5f,
         type: 3}
       propertyPath: m_Name
-      value: push
+      value: Pop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15970,7 +15970,7 @@ PrefabInstance:
     - target: {fileID: 7535445690668443084, guid: 2a763540b8afb9c429c381638cf40d2e,
         type: 3}
       propertyPath: m_Name
-      value: ButtonSuccess
+      value: Insert
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21399,6 +21399,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1213721648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1213721652 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2497946419536956104, guid: 7a0945baad6622842ae63a29f6fdca5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1213721648}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1219001283
 GameObject:
   m_ObjectHideFlags: 0
@@ -23095,8 +23107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arOrigin: {fileID: 67125915}
-  resetButton: {fileID: 0}
-  submitButton: {fileID: 0}
+  resetButton: {fileID: 1213721652}
+  submitButton: {fileID: 1464633583}
   MovePhonePrompt: {fileID: 1832850763}
 --- !u!1 &1304832019
 GameObject:
@@ -26233,6 +26245,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463358387}
   m_CullTransparentMesh: 1
+--- !u!114 &1464633583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2497946419536956104, guid: 2a763540b8afb9c429c381638cf40d2e,
+    type: 3}
+  m_PrefabInstance: {fileID: 192712507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1470480113
 GameObject:
   m_ObjectHideFlags: 0
@@ -33858,7 +33882,7 @@ PrefabInstance:
     - target: {fileID: 7535445690668443084, guid: 7a0945baad6622842ae63a29f6fdca5f,
         type: 3}
       propertyPath: m_Name
-      value: ButtonDanger
+      value: Delete
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

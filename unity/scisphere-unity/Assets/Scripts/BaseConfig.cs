@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.EnhancedTouch;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using EnhancedTouch = UnityEngine.InputSystem.EnhancedTouch;
@@ -7,108 +8,111 @@ using EnhancedTouch = UnityEngine.InputSystem.EnhancedTouch;
 [RequireComponent(typeof(ARRaycastManager))]
 public class BaseConfig : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject prefab;
-    private ARRaycastManager arRaycastManager;
-    public Pose placementPose;
-    private bool placementPoseIsValid = false;
+  [SerializeField]
+  private GameObject prefab;
+  private ARRaycastManager arRaycastManager;
+  public Pose placementPose;
+  private bool placementPoseIsValid = false;
 
-    private List<ARRaycastHit> hits = new List<ARRaycastHit>();
-    private bool isPermanentlySetPose = false;
+  private List<ARRaycastHit> hits = new List<ARRaycastHit>();
+  private bool isPermanentlySetPose = false;
 
-    public static BaseConfig Instance;
+  public static BaseConfig Instance;
 
-    private void Awake()
+  private void Awake()
+  {
+    if (Instance != null)
     {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-        arRaycastManager = GetComponent<ARRaycastManager>();
+      Destroy(gameObject);
+      return;
     }
+    Instance = this;
+    DontDestroyOnLoad(gameObject);
+    arRaycastManager = GetComponent<ARRaycastManager>();
+  }
 
-    public void resetPlacementPose()
+  public void resetPlacementPose()
+  {
+    isPermanentlySetPose = false;
+    EnhancedTouch.Touch.onFingerDown += FingerDownSetPlane;
+  }
+
+  public bool getIsPermanentlySetPose()
+  {
+    return isPermanentlySetPose;
+  }
+
+  public bool isSetValidPose()
+  {
+    return placementPoseIsValid;
+  }
+
+  // Update is called once per frame
+  void Update()
+  {
+    if (isPermanentlySetPose) return;
+
+    updatePlacementPose();
+    updatePlacementIndicator();
+  }
+
+  private void OnEnable()
+  {
+    EnhancedTouchSupport.Enable();
+    EnhancedTouch.Touch.onFingerDown += FingerDownSetPlane;
+  }
+
+  private void OnDisable()
+  {
+    EnhancedTouch.Touch.onFingerDown -= FingerDownSetPlane;
+  }
+
+  private void FingerDownSetPlane(EnhancedTouch.Finger finger)
+  {
+    if (isPermanentlySetPose && placementPoseIsValid) return;
+    if (placementPoseIsValid)
     {
-        isPermanentlySetPose = false;
-        EnhancedTouch.Touch.onFingerDown += FingerDownSetPlane;
+      isPermanentlySetPose = true;
+      EnhancedTouch.Touch.onFingerDown -= FingerDownSetPlane;
     }
+  }
 
-    public bool getIsPermanentlySetPose()
+  private void updatePlacementPose()
+  {
+    var screenCenter = Camera.main.ViewportToScreenPoint(
+        new Vector3(0.5f, 0.5f)
+    );
+    arRaycastManager.Raycast(
+        screenCenter,
+        hits,
+        TrackableType.Planes
+    );
+    placementPoseIsValid = (hits.Count > 0);
+    if (placementPoseIsValid)
     {
-        return isPermanentlySetPose;
+      placementPose = hits[0].pose;
+      var cameraForward = Camera.main.transform.forward;
+      var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+      placementPose.rotation = Quaternion.LookRotation(cameraBearing);
     }
+  }
 
-    public bool isSetValidPose()
+
+  private void updatePlacementIndicator()
+  {
+    if (placementPoseIsValid)
     {
-        return placementPoseIsValid;
-    }
 
-    // Update is called once per frame
-    void Update()
+      prefab.SetActive(true);
+
+      prefab.transform.SetPositionAndRotation(
+          placementPose.position,
+          placementPose.rotation
+      );
+    }
+    else
     {
-        if (isPermanentlySetPose) return;
-
-        updatePlacementPose();    
-        updatePlacementIndicator();
+      prefab.SetActive(false);
     }
-
-    private void OnEnable()
-    {
-        EnhancedTouch.EnhancedTouchSupport.Enable();
-        EnhancedTouch.Touch.onFingerDown += FingerDownSetPlane;
-    }
-
-    private void OnDisable()
-    {
-        EnhancedTouch.EnhancedTouchSupport.Disable();
-        EnhancedTouch.Touch.onFingerDown -= FingerDownSetPlane;
-    }
-
-    private void FingerDownSetPlane(EnhancedTouch.Finger finger)
-    {
-        if (isPermanentlySetPose && placementPoseIsValid) return;
-        if (placementPoseIsValid) {
-            isPermanentlySetPose = true;
-            EnhancedTouch.Touch.onFingerDown -= FingerDownSetPlane;
-        }
-    }
-
-    private void updatePlacementPose()
-    {
-        var screenCenter = Camera.main.ViewportToScreenPoint(
-            new Vector3(0.5f, 0.5f)
-        );
-        arRaycastManager.Raycast(
-            screenCenter, 
-            hits,
-            TrackableType.Planes
-        );
-        placementPoseIsValid = (hits.Count > 0);
-        if (placementPoseIsValid)
-        {
-            placementPose = hits[0].pose;
-            var cameraForward = Camera.main.transform.forward;
-            var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
-            placementPose.rotation = Quaternion.LookRotation(cameraBearing);
-        }
-    }
-
-
-    private void updatePlacementIndicator()
-    {
-        if (placementPoseIsValid) {
-
-            prefab.SetActive(true);
-
-            prefab.transform.SetPositionAndRotation(
-                placementPose.position, 
-                placementPose.rotation
-            );
-        } else {
-            prefab.SetActive(false);
-        }
-    }
+  }
 }
