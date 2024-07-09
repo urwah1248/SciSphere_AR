@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_unity_widget/flutter_unity_widget.dart';
 import 'package:get/route_manager.dart';
-
 import 'package:scisphere/screens/details_view/details_view.dart';
 import 'package:scisphere/screens/home_view/demo.dart';
-// import 'package:scisphere/widgets/custom_textfield.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -28,65 +26,69 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.dashboard,
                       size: 38,
                       color: Color(0xff66328E),
                     ),
-                    CircleAvatar(
-                      backgroundImage: AssetImage('assets/sample_dp.png'),
-                      radius: 24,
-                    ),
+                    Container(
+                        width: 42,
+                        height: 42,
+                        decoration: BoxDecoration(
+                            color: const Color(0xff66328E),
+                            borderRadius: BorderRadius.circular(12)),
+                        child: IconButton(
+                          onPressed: () => Get.to(() => DemoPage()),
+                          icon: const Icon(Icons.view_in_ar_outlined,
+                              color: Colors.white),
+                        ))
                   ],
                 ),
                 const SizedBox(
                   height: 4,
                 ),
-                Text(
+                const Text(
                   'Hello, Developer',
-                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 24),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24),
                 ),
-                ElevatedButton(
-                    onPressed: () {
-                      Get.to(() => DemoPage());
-                    },
-                    child: Text("Game")),
+
                 const SizedBox(
                   height: 4,
                 ),
-                Text(
+                const Text(
                   'What do you want to learn?',
-                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 14),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 14),
                 ),
                 const SizedBox(
                   height: 32,
                 ),
-                // const CustomTextfield(
-                //   isPrefixIcon: true,
-                //   prefixIcon: Icon(
-                //     Icons.search,
-                //     size: 30,
-                //   ),
-                //   isHomepage: true,
-                //   hintText: 'Search..',
-                // ),
+
                 const SizedBox(
-                  height: 180,
+                  height: 80,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Contents',
-                      style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
                     ),
-                    InkWell(
-                      onTap: () {},
-                      child: const Text('View All'),
-                    )
+                    // InkWell(
+                    //   onTap: () {},
+                    //   child: const Text('View All'),
+                    // )
                   ],
                 ),
                 // SizedBox(
@@ -137,17 +139,22 @@ class HomePage extends StatelessWidget {
                                       color: const Color(0xffE6E6E6),
                                       borderRadius: BorderRadius.circular(12),
                                     ),
-                                    child: Image.asset('assets/web-programming.png'),
+                                    child: Image.asset(
+                                        'assets/web-programming.png'),
                                   ),
                                   const SizedBox(
                                     width: 20,
                                   ),
                                   Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         contentsList[index],
-                                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
+                                        style: const TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16),
                                       ),
                                       const Row(
                                         children: [

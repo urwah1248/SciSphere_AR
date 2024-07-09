@@ -4,7 +4,6 @@ import 'package:get/route_manager.dart';
 import 'package:scisphere/screens/auth_view/sign_up_screen.dart';
 import 'package:scisphere/screens/home_view/home_page.dart';
 import 'package:scisphere/widgets/custom_textfield.dart';
-import 'package:scisphere/widgets/forgot_password_dialog_box.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -26,13 +25,19 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 6,
               ),
-              Text(
+              const Text(
                 'Welcome Back',
-                style: TextStyle(color: const Color(0xff66328E), fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Color(0xff66328E),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
-              Text(
+              const Text(
                 'Login to continue',
-                style: TextStyle(color: const Color(0xff66328E), fontSize: 16, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                    color: Color(0xff66328E),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 height: 20,
@@ -64,20 +69,20 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  InkWell(
-                    onTap: () {
-                      forgotPasswordDialogBox(context);
-                    },
-                    child: Text(
-                      'forgot password?',
-                      style: TextStyle(color: const Color(0xff66328E), fontSize: 14, fontWeight: FontWeight.w500),
-                    ),
-                  )
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.end,
+              //   children: [
+              //     InkWell(
+              //       onTap: () {
+              //         forgotPasswordDialogBox(context);
+              //       },
+              //       child: Text(
+              //         'forgot password?',
+              //         style: TextStyle(color: const Color(0xff66328E), fontSize: 14, fontWeight: FontWeight.w500),
+              //       ),
+              //     )
+              //   ],
+              // ),
               Padding(
                 padding: const EdgeInsets.only(top: 36, bottom: 16),
                 child: InkWell(
@@ -85,11 +90,16 @@ class LoginScreen extends StatelessWidget {
                   child: Container(
                     width: double.infinity,
                     height: 60,
-                    decoration: BoxDecoration(color: const Color(0xff66328E), borderRadius: BorderRadius.circular(10)),
-                    child: Center(
+                    decoration: BoxDecoration(
+                        color: const Color(0xff66328E),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: const Center(
                       child: Text(
                         'LOG IN',
-                        style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -101,18 +111,24 @@ class LoginScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Dont have an account?',
-                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.w500, fontSize: 14),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14),
                   ),
                   const SizedBox(
                     width: 4,
                   ),
                   InkWell(
                     onTap: () => Get.to(() => const SignUpScreen()),
-                    child: Text(
+                    child: const Text(
                       'Sign up now',
-                      style: TextStyle(color: const Color(0xff66328E), fontWeight: FontWeight.w400, fontSize: 14),
+                      style: TextStyle(
+                          color: Color(0xff66328E),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14),
                     ),
                   )
                 ],

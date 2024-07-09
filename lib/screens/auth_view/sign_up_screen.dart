@@ -25,9 +25,12 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(
                 height: 6,
               ),
-              Text(
+              const Text(
                 'Create An Account',
-                style: TextStyle(color: const Color(0xff66328E), fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Color(0xff66328E),
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
               ),
               const SizedBox(
                 height: 20,
@@ -57,27 +60,23 @@ class SignUpScreen extends StatelessWidget {
                   Icons.lock,
                   color: Color(0xff66328E),
                 ),
-                suffixIcon: Icon(
-                  Icons.remove_red_eye_outlined,
-                  color: Colors.black,
-                ),
               ),
               const SizedBox(
                 height: 30,
               ),
-              const CustomTextfield(
-                title: 'Confirm Password',
-                isPrefixIcon: true,
-                isSuffixIcon: true,
-                suffixIcon: Icon(
-                  Icons.remove_red_eye_outlined,
-                  color: Colors.black,
-                ),
-                prefixIcon: Icon(
-                  Icons.lock,
-                  color: Color(0xff66328E),
-                ),
-              ),
+              // const CustomTextfield(
+              //   title: 'Confirm Password',
+              //   isPrefixIcon: true,
+              //   isSuffixIcon: true,
+              //   suffixIcon: Icon(
+              //     Icons.remove_red_eye_outlined,x
+              //     color: Colors.black,
+              //   ),
+              //   prefixIcon: Icon(
+              //     Icons.lock,
+              //     color: Color(0xff66328E),
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.only(top: 32, bottom: 12),
                 child: InkWell(
@@ -85,11 +84,16 @@ class SignUpScreen extends StatelessWidget {
                   child: Container(
                     width: double.infinity,
                     height: 60,
-                    decoration: BoxDecoration(color: const Color(0xff66328E), borderRadius: BorderRadius.circular(10)),
-                    child: Center(
+                    decoration: BoxDecoration(
+                        color: const Color(0xff66328E),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: const Center(
                       child: Text(
                         'SIGN UP',
-                        style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -98,18 +102,24 @@ class SignUpScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Have an account already?',
-                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 14),
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14),
                   ),
                   const SizedBox(
                     width: 4,
                   ),
                   InkWell(
                     onTap: () => Get.to(() => const LoginScreen()),
-                    child: Text(
+                    child: const Text(
                       'Log in',
-                      style: TextStyle(color: const Color(0xff66328E), fontWeight: FontWeight.w400, fontSize: 14),
+                      style: TextStyle(
+                          color: Color(0xff66328E),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14),
                     ),
                   )
                 ],

@@ -18,9 +18,12 @@ class ResetPasswordScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Reset Password',
-                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
               ),
               const SizedBox(
                 height: 26,
@@ -45,11 +48,16 @@ class ResetPasswordScreen extends StatelessWidget {
                     child: Container(
                       width: double.infinity,
                       height: 60,
-                      decoration: BoxDecoration(color: const Color(0xff66328E), borderRadius: BorderRadius.circular(6)),
-                      child: Center(
+                      decoration: BoxDecoration(
+                          color: const Color(0xff66328E),
+                          borderRadius: BorderRadius.circular(6)),
+                      child: const Center(
                         child: Text(
                           'Submit',
-                          style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),

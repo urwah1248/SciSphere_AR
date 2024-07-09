@@ -28,31 +28,44 @@ class EmailVerificationScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 8, bottom: 10),
+            const Padding(
+              padding: EdgeInsets.only(top: 8, bottom: 10),
               child: Text(
                 'Verify your email address',
-                style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18),
               ),
             ),
             RichText(
               textAlign: TextAlign.center,
-              text: TextSpan(style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 16), children: [
-                const TextSpan(
-                  text: 'We sent you a 4 digit code to verify\nyour email address',
-                ),
-                TextSpan(
-                  text: '(desx@gmail.com).\n',
-                  style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
-                ),
-                const TextSpan(
-                  text: 'Enter in the field below.\n ',
-                ),
-              ]),
+              text: const TextSpan(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16),
+                  children: [
+                    TextSpan(
+                      text:
+                          'We sent you a 4 digit code to verify\nyour email address',
+                    ),
+                    TextSpan(
+                      text: '(desx@gmail.com).\n',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                    ),
+                    TextSpan(
+                      text: 'Enter in the field below.\n ',
+                    ),
+                  ]),
             ),
             Form(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 54),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 60, vertical: 54),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -66,10 +79,16 @@ class EmailVerificationScreen extends StatelessWidget {
                             FocusScope.of(context).nextFocus();
                           }
                         },
-                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
-                        inputFormatters: [LengthLimitingTextInputFormatter(1), FilteringTextInputFormatter.digitsOnly],
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(1),
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
                       ),
                     ),
                     SizedBox(
@@ -82,10 +101,16 @@ class EmailVerificationScreen extends StatelessWidget {
                             FocusScope.of(context).nextFocus();
                           }
                         },
-                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
-                        inputFormatters: [LengthLimitingTextInputFormatter(1), FilteringTextInputFormatter.digitsOnly],
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(1),
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
                       ),
                     ),
                     SizedBox(
@@ -98,10 +123,16 @@ class EmailVerificationScreen extends StatelessWidget {
                             FocusScope.of(context).nextFocus();
                           }
                         },
-                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
-                        inputFormatters: [LengthLimitingTextInputFormatter(1), FilteringTextInputFormatter.digitsOnly],
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(1),
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
                       ),
                     ),
                     SizedBox(
@@ -114,10 +145,16 @@ class EmailVerificationScreen extends StatelessWidget {
                             FocusScope.of(context).nextFocus();
                           }
                         },
-                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 16),
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16),
                         keyboardType: TextInputType.number,
                         textAlign: TextAlign.center,
-                        inputFormatters: [LengthLimitingTextInputFormatter(1), FilteringTextInputFormatter.digitsOnly],
+                        inputFormatters: [
+                          LengthLimitingTextInputFormatter(1),
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
                       ),
                     )
                   ],
@@ -127,7 +164,7 @@ class EmailVerificationScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Didn’t get the code?',
                   style: TextStyle(
                     color: Colors.black,
@@ -135,27 +172,36 @@ class EmailVerificationScreen extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {},
-                  child: Text(
+                  child: const Text(
                     ' Resend',
-                    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             RichText(
               textAlign: TextAlign.center,
-              text: TextSpan(style: TextStyle(color: Colors.black, fontWeight: FontWeight.w400, fontSize: 14), children: [
-                const TextSpan(
-                  text: 'Expires in',
-                ),
-                TextSpan(
-                  text: ' 01:00',
-                  style: TextStyle(color: const Color(0xff66328E), fontWeight: FontWeight.bold, fontSize: 14),
-                ),
-              ]),
+              text: const TextSpan(
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14),
+                  children: [
+                    TextSpan(
+                      text: 'Expires in',
+                    ),
+                    TextSpan(
+                      text: ' 01:00',
+                      style: TextStyle(
+                          color: Color(0xff66328E),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14),
+                    ),
+                  ]),
             ),
           ],
         ),
@@ -167,11 +213,16 @@ class EmailVerificationScreen extends StatelessWidget {
           child: Container(
             width: double.infinity,
             height: 60,
-            decoration: BoxDecoration(color: const Color(0xff66328E), borderRadius: BorderRadius.circular(10)),
-            child: Center(
+            decoration: BoxDecoration(
+                color: const Color(0xff66328E),
+                borderRadius: BorderRadius.circular(10)),
+            child: const Center(
               child: Text(
                 'Submit',
-                style: TextStyle(fontSize: 18, color: Colors.white, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
               ),
             ),
           ),
